@@ -1,0 +1,9 @@
+mixin li(className)
+    li(class= className + "__item")
+        a(class= className + "__link")&attributes(attributes)
+            block
+
+
+mixin input(className, id, type, placeholder, text)
+    label(class="visually-hidden" for= id)= text
+    input(id= id, class= className, type= type, placeholder= placeholder)&attributes(attributes)

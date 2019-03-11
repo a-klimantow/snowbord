@@ -1,0 +1,104 @@
+include block/mixin
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="css/normalise.css")
+        link(rel="stylesheet", href="css/style.css")
+        title Snowbord
+    body
+        header.main-header
+            .main-header__wrap
+                img(src="img/logo.svg", alt="logotip")
+                nav.navigation
+                    ul.navigation__list
+                        +li("navigation")(href="#") Shop
+                        +li("navigation")(href="#") Team
+                        +li("navigation")(href="#") Events
+                        +li("navigation")(href="#") Experience
+                        +li("navigation")(href="#") Company
+                        +li("navigation")(href="#") Contact
+                    +input("navigation__search", "search", "search", false, "Search for site")
+                    a(href="#") e0
+        .slider
+            img(src="img/slide-1.jpg", alt="slide-1")
+            img(src="img/slide-2.jpg", alt="slide-2")
+            .slider__content
+                b Run over everything
+                a.button.navigation__button(href="#") See details
+        
+        main
+            section.shop
+                h2.section-title Snowboards
+                p Aliquam erat volutpat. Curabitur ut consequat arcu eget laoret est
+                span x
+                ul.shop__list
+                    - for (var i=1; i<=5; i++)
+                        li.shop__item
+                            img(src="img/snowbord-" + i + ".jpg" alt="snowbord")
+                p.shop__desc Snowboard extreme series
+
+            section.info
+                h2.visually-hidden Info from snowbords
+                artical.artical
+                    h3.artical__title The mountains snowboarding
+                    p.artical__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nam, quasi facilis rem officia consectetur. Facilis quo repellendus porro, quibusdam sed omnis veritatis consequuntur quae tempore fuga in impedit et consequatur vero harum corrupti quos minus at odit cum architecto recusandae ipsa quas. Optio accusamus obcaecati error impedit nulla eius.
+                    p.artical__text Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi animi expedita cum, sit odit qui ullam. Neque provident illo necessitatibus animi aliquam, a quam dignissimos, eius magnam vitae reiciendis, minima atque inventore. Aut qui eveniet placeat deserunt hic ut quod magnam similique perspiciatis optio id quas consequatur, asperiores in? Nam!
+            
+            section.features
+                h2.section-title Features
+                span x
+                - 
+                 var text = [
+                     "Born Indentity: Bringing burton hardgoods to life",
+                     "Jeremy Jones: On that street grind",
+                     "Burton's tokyo rail days recap",
+                     "Burton's tokyo rail days preview"
+                     ]
+                ul.features__list
+                    - for(var i=0; i<4; i++)
+                        li.features__item
+                            figure.features__wrap
+                                img(src="img/features-" + (i+1) + ".jpg" alt="")
+                                figcaption.features__desc= text[i]
+        
+        footer.footer
+            .footer__menu
+                .footer__col
+                    h3.footer__col_title Products
+                    ul.fb__list
+                        +li('fb')(href="#") Mens
+                        +li('fb')(href="#") Womens
+                        +li('fb')(href="#") Youth
+                .footer__col
+                    h3.footer__col_title About
+                    ul.fb__list
+                        +li('fb')(href="#") Careers and Internships
+                        +li('fb')(href="#") Sponsorships
+                        +li('fb')(href="#") team
+                        +li('fb')(href="#") Catalog Request/Download
+                .footer__col
+                    h3.footer__col_title Costomer support
+                    ul.fb__list
+                        +li('fb')(href="#") Contact Us
+                        +li('fb')(href="#") Shiping and Order Tracking
+                        +li('fb')(href="#") Easy Returns
+                        +li('fb')(href="#") Warranty
+                        +li('fb')(href="#") Peplacement Binding Parts
+                .footer__col
+                    h3.footer__col_title Newsletter
+                    form.footer__form(action="")
+                        +input("footer__form_input", 'email', "email", "Enter your email", "Enter email")
+                    ul.social__list
+                        +li("social")(href="#" class="fb") facebook
+                        +li("social")(href="#" class="tw") twitter
+                        +li("social")(href="#" class="inst") instagram
+                        +li("social")(href="#" class="pint") pinteres
+                        +li("social")(href="#" class="yt") youtube
+            .footer__bottom
+                p &copy; 2014 Mountains Snowbords
+                a.lang-cange(href="#") Change region                       
+
+                
